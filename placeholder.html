@@ -38,25 +38,20 @@
 <script>
 const params = new URLSearchParams(window.location.search);
 
+console.log("search =", window.location.search);
+
 const img = params.get("img");
 const video = params.get("video");
 
-if (img) {
-    document.body.innerHTML = `
-        <img src="images/${img}" alt="">
-    `;
-} else if (video) {
-    document.body.innerHTML = `
-        <video autoplay muted loop controls playsinline>
-            <source src="videos/${video}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    `;
-} else {
-    document.body.innerHTML = `
-        <div class="message">Coming Soon</div>
-    `;
-}
+console.log("img =", img);
+console.log("video =", video);
+
+document.body.innerHTML = `
+    <div style="color:white;font:20px Arial;padding:20px;">
+        img = ${img}<br>
+        video = ${video}
+    </div>
+`;
 </script>
 
 </body>
